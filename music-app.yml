@@ -13,7 +13,7 @@ management:
 musicapp:
   id: ${random.int[1,100]}
 server:
-  port: 0
+  port: 9091
 spring:
   jpa:
     show-sql: true
