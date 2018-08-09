@@ -1,0 +1,30 @@
+management:
+ endpoint:
+   info:
+     enabled: true  
+   health:
+     enabled: true
+   shutdown:
+     enabled: true
+ endpoints:
+    web:
+      exposure:
+        include: "*"
+musicapp:
+  id: ${random.int[1,100]}
+server:
+  port: 0
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    url: jdbc:sqlite:MyMusic.db
+    username: ""
+    password: ""
+    driver-class-name:  org.sqlite.JDBC
+    database-platform: com.dojo.springboot.playlists.config.SQLiteDialect
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${musicapp.id}}}
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2

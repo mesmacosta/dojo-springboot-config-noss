@@ -1,1 +1,1 @@
-# dojo-springboot-config-noss
+# dojo-springboot-config
